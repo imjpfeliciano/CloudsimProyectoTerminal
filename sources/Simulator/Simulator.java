@@ -7,7 +7,6 @@
  * Copyright (c) 2009, The University of Melbourne, Australia
  */
 
-
 package Simulator;
 
 import java.text.DecimalFormat;
@@ -37,21 +36,14 @@ import org.cloudbus.cloudsim.provisioners.BwProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 
-/**
- * An example showing how to create simulation entities
- * (a DatacenterBroker in this example) in run-time using
- * a globar manager entity (GlobalBroker).
- */
 public class Simulator {
 
-    /** The cloudlet list. */
     private static List<Cloudlet> cloudletList;
 
-    /** The vmList. */
     private static List<Vm> vmList;
 
     private static List<Vm> createVM(int userId, int vms, int idShift) {
-        //Creates a container to store VMs. This list is passed to the broker later
+        //Creamos un contenedor para almacenar las máquinas virtuales. Esta lista será enviada hacia el broker
         LinkedList<Vm> list = new LinkedList<Vm>();
 
         //Parametros para las máquinas virtuales
@@ -62,10 +54,10 @@ public class Simulator {
         int pesNumber = 1; //number of cpus
         String vmm = "Xen"; //VMM name
 
-        //create VMs
+        //Creacion de las máquinas virtuales
         Vm[] vm = new Vm[vms];
 
-        for(int i=0;i<vms;i++){
+        for(int i=0; i<vms; i++){
             vm[i] = new Vm(idShift + i, userId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
             list.add(vm[i]);
         }
@@ -75,7 +67,7 @@ public class Simulator {
 
 
     private static List<Cloudlet> createCloudlet(int userId, int cloudlets, int idShift){
-        // Creates a container to store Cloudlets
+        //Creamos un contenedor para guardar los cloudlets
         LinkedList<Cloudlet> list = new LinkedList<Cloudlet>();
 
         //cloudlet parameters
