@@ -16,6 +16,9 @@ import org.cloudbus.cloudsim.Datacenter;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.core.CloudSim;
+import common.VmsCreator;
+import common.DataCenterCreator;
+import common.CloudletCreator;
 
 
 /**
@@ -30,9 +33,6 @@ public class FCFS {
 	/** The vmlist. */
 	private static List<Vm> vmlist;
 
-	private static int reqTasks = 5;
-	private static int reqVms = 2;
-	
 	/**
 	 * Creates main() to run this example
 	 */
@@ -60,7 +60,7 @@ public class FCFS {
 	            	int brokerId = broker.getId();
 
 	            	//Fourth step: Create one virtual machine
-	            	vmlist = new VmsCreator().createRequiredVms(reqVms, brokerId);
+	            	vmlist = new VmsCreator().createVirtualMachines(brokerId);
 
 
 	            	//submit vm list to the broker
@@ -68,7 +68,8 @@ public class FCFS {
 
 
 	            	//Fifth step: Create two Cloudlets
-	            	cloudletList = new CloudletCreator().createUserCloudlet(reqTasks, brokerId);
+	            	cloudletList = new CloudletCreator().createTasks(brokerId);
+					//cloudletList = new common.DataCenterCreator.common.CloudletCreator().createUserCloudlet(brokerId);
       	
 	            	//submit cloudlet list to the broker
 	            	broker.submitCloudletList(cloudletList);
@@ -98,7 +99,7 @@ public class FCFS {
 	    }
 
 		private static Datacenter createDatacenter(String name){
-			Datacenter datacenter=new DataCenterCreator().createUserDatacenter(name, reqVms);			
+			Datacenter datacenter=new DataCenterCreator().createDatacenter(name);
 
 	        return datacenter;
 
@@ -110,7 +111,7 @@ public class FCFS {
 
 	    	FcfsBroker broker = null;
 	        try {
-			broker = new FcfsBroker("Broker");
+				broker = new FcfsBroker("Broker");
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
@@ -142,7 +143,7 @@ public class FCFS {
 
 	            	Log.printLine( indent + indent + cloudlet.getResourceId() + indent + indent + indent + cloudlet.getVmId() +
 	                     indent + indent + dft.format(cloudlet.getActualCPUTime()) + indent + indent + dft.format(cloudlet.getExecStartTime())+
-                             indent + indent + dft.format(cloudlet.getFinishTime()));
+                             indent + indent + dft.format(cloudlet.getFinishTime()) + indent + indent + indent + indent + cloudlet.getUtilizationOfRam(cloudlet.getActualCPUTime()));
 	            }
 	        }
 
