@@ -5,6 +5,9 @@ import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.UtilizationModelFull;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * common.DataCenterCreator.common.CloudletCreator Creates Cloudlets as per the User Requirements.
@@ -13,30 +16,25 @@ import java.util.ArrayList;
  */
 public class CloudletCreator {
 
-    public ArrayList<Cloudlet> createTasks(int brokerId){
-        ArrayList<Cloudlet> cloudletList = new ArrayList<Cloudlet>();
+    public static List<Cloudlet> createTasks(int userId, int cloudlets, int idShift){
+        LinkedList<Cloudlet> list = new LinkedList<Cloudlet>();
 
-        //int id = 0;
-        int pesNumber = 1;
-        int[] length = new int[]{9000, 2000, 3000, 7000, 5000, 6000, 4000, 8000, 2000, 5000};
-        int fileSize = 300;
-        int outputSize = 300;
+        Random rand = new Random();
+        //parámetros de las tareas
+        long length = 10000;
+        long fileSize = 300;
+        long outputSize = 300;
+        int pesNuimber = 1;
         UtilizationModel utilizationModel = new UtilizationModelFull();
 
-        for(int id=0; id < length.length; id++){
-            Cloudlet task = new Cloudlet(id, length[id] * 10, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-            task.setUserId(brokerId);
+        Cloudlet[] cloudlet = new Cloudlet[cloudlets];
 
-            System.out.println("tam de la Tarea " + id + " = " + task.getCloudletLength());
-            cloudletList.add(task);
+        for(int i=0; i<cloudlets; i++){
+            cloudlet[i] = new Cloudlet(idShift + i, length * (rand.nextInt() * 10 + 1), pesNuimber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i].setUserId(userId);
+            list.add(cloudlet[i]);
         }
 
-        // Podemos agregar estaticamente las tareas
-        // cloudletList.add(new Cloudlet(0, 1000, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel));
-
-
-        return cloudletList;
+        return list;
     }
-
-
 }

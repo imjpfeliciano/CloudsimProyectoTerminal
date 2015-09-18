@@ -1,3 +1,5 @@
+package FCFS;
+
 import org.cloudbus.cloudsim.DatacenterBroker;
 
 /**
@@ -21,7 +23,7 @@ public class FcfsBroker extends DatacenterBroker {
 		System.out.println("\n\tFCFS Broker Schedules\n");
     	for(int i=0;i<reqTasks;i++){
     		bindCloudletToVm(i, (i%reqVms));
-    		System.out.println("Task"+cloudletList.get(i).getCloudletId()+" is bound with VM"+vmList.get(i%reqVms).getId());
+    		System.out.println("Task"+cloudletList.get(i).getCloudletId()+" is bound with VM"+vmList.get(i%reqVms).getId() +  "tam: " + cloudletList.get(i).getCloudletFileSize());
     	}
     	
     	System.out.println("\n");
