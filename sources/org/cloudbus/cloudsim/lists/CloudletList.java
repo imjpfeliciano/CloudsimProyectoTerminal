@@ -10,6 +10,7 @@ package org.cloudbus.cloudsim.lists;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 import org.cloudbus.cloudsim.Cloudlet;
@@ -87,5 +88,16 @@ public class CloudletList {
 			}
 		});
 	}
+
+    public static <T extends Cloudlet> void revert(List<T> cloudletList) {
+        Collections.sort(cloudletList, new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                Double cla = Double.valueOf(o1.getCloudletTotalLength());
+                Double clb = Double.valueOf(o2.getCloudletTotalLength());
+                return clb.compareTo(cla);
+            }
+        });
+    }
 
 }

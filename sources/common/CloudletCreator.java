@@ -16,6 +16,9 @@ import java.util.Random;
  */
 public class CloudletCreator {
 
+    public static int getRandomInteger(int maximun, int minimum){
+        return ((int)(Math.random() * (maximun - minimum))) + minimum;
+    }
     public static List<Cloudlet> createTasks(int userId, int cloudlets, int idShift){
         LinkedList<Cloudlet> list = new LinkedList<Cloudlet>();
 
@@ -30,7 +33,7 @@ public class CloudletCreator {
         Cloudlet[] cloudlet = new Cloudlet[cloudlets];
 
         for(int i=0; i<cloudlets; i++){
-            cloudlet[i] = new Cloudlet(idShift + i, length * (rand.nextInt() * 10 + 1), pesNuimber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i] = new Cloudlet(idShift + i, length * getRandomInteger(10, 1), pesNuimber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
             cloudlet[i].setUserId(userId);
             list.add(cloudlet[i]);
         }
