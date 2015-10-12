@@ -299,7 +299,7 @@ public class CloudSimExample7 {
 	private static void printCloudletList(List<Cloudlet> list) {
 		int size = list.size();
 		Cloudlet cloudlet;
-
+		Log.printLine("finished Cloudlets "+list.size());
 		String indent = "    ";
 		Log.printLine();
 		Log.printLine("========== OUTPUT ==========");

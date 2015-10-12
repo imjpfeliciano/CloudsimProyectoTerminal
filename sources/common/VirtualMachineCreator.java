@@ -34,7 +34,7 @@ public class VirtualMachineCreator {
         for(int i=0; i<vms; i++){
             //Modificar new CloudletSchedulerTimeShared por FCFS
             if(i % 2 == 0) {
-                vm[i] = new Vm(idShift + i, userId, mips, pesNumber * 2, ram * 2, bw, size, vmm, new CloudletSchedulerSpaceShared());
+                vm[i] = new Vm(idShift + i, userId, mips, pesNumber * 2, ram * 2, bw*2, size*2, vmm, new CloudletSchedulerSpaceShared());
             } else {
                 vm[i] = new Vm(idShift + i, userId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerSpaceShared());
             }

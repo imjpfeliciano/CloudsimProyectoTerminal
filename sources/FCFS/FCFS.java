@@ -65,8 +65,9 @@ public class FCFS {
                 //Fourth step: Create one virtual machine
                 //vmlist = new VmsCreator().createVirtualMachines(brokerId);
                 vmlist = new VirtualMachineCreator().createVM(brokerId, 5, 0);
-                cloudletList = new CloudletCreator().createTasks(brokerId, 200, 0);
+                cloudletList = new CloudletCreator().createTasks(brokerId, 50, 0);
 
+                Log.printLine("Initial Cloudlet :"+cloudletList.size());
 
                 //submit vm list to the broker
                 broker.submitVmList(vmlist);

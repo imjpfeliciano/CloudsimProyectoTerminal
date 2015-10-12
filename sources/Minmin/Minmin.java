@@ -54,7 +54,7 @@ public class Minmin {
 
 
             // Quinto paso: Crear la lista de tareas
-            cloudletList = new CloudletCreator().createTasks(brokerId, 200, 0);
+            cloudletList = new CloudletCreator().createTasks(brokerId, 50, 0);
             broker.submitCloudletList(cloudletList);
 
             //call the scheduling function via the broker

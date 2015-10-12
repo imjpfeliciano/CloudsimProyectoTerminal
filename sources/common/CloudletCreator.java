@@ -25,15 +25,15 @@ public class CloudletCreator {
         Random rand = new Random();
         //parámetros de las tareas
         long length = 10000;
-        long fileSize = 300;
-        long outputSize = 300;
-        int pesNuimber = 1;
+        long fileSize = 3000;
+        long outputSize = 60000;
+        int pesNuimber = 2;
         UtilizationModel utilizationModel = new UtilizationModelFull();
 
         Cloudlet[] cloudlet = new Cloudlet[cloudlets];
 
         for(int i=0; i<cloudlets; i++){
-            cloudlet[i] = new Cloudlet(idShift + i, length * getRandomInteger(10, 1), pesNuimber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i] = new Cloudlet(idShift + i, length * getRandomInteger(10, 1), pesNuimber , fileSize * getRandomInteger(6, 1), outputSize * getRandomInteger(5, 1), utilizationModel, utilizationModel, utilizationModel);
             cloudlet[i].setUserId(userId);
             list.add(cloudlet[i]);
         }

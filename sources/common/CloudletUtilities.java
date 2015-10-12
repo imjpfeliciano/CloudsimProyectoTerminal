@@ -6,6 +6,7 @@ import org.cloudbus.cloudsim.Log;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import CloudReporter.CloudletReport;
 /**
  * Created by jpfeliciano on 18/09/15.
  */
@@ -14,6 +15,11 @@ public class CloudletUtilities {
     public static void printCloudletList(List<Cloudlet> list) {
         int size = list.size();
         Cloudlet cloudlet;
+        CloudletReport cloudletReport = new CloudletReport();
+        double[] time = cloudletReport.getTotalCost(list);
+        String[] name = {"totalProcessingCost","totalTime","totalUtilizationRam","totalUtilizationCPU"};
+
+
 
         String indent = "    ";
         Log.printLine();
@@ -34,6 +40,14 @@ public class CloudletUtilities {
                         indent + indent + dft.format(cloudlet.getFinishTime()) + indent + indent + indent + indent + cloudlet.getUtilizationOfRam(cloudlet.getActualCPUTime()));
             }
         }
+        String tmp = "{";
+        for(int i=0;i<time.length;i++){
+            Log.printLine(name[i] + " :" + time[i]);
+            tmp+= Double.toString(time[i]) + ",";
+        }
+        tmp+="}";
+        Log.printLine(tmp);
+        Log.printLine("total cloudlet :"+ list.size());
 
     }
 }
