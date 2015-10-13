@@ -14,6 +14,7 @@ import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
  * @author Linda J
  *
  */
+
 public class DataCenterCreator {
 
 
@@ -22,15 +23,11 @@ public class DataCenterCreator {
         //Pasos para crear un datacenter
         // 1. Necesitamos crear una lista para almacenar nuestra máquina
         List<Host> hostList = new ArrayList<Host>();
-
         // 2. Una máquina contiene uno o más PEs o CPUs/Cores.
         List<Pe> peList = new ArrayList<Pe>();
-
         int mips = 1000;
-
         // 3. Crear los PEs y agregarlos a la lista.
         peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
-
         //4. Create Host with its id and list of PEs and add them to the list of machines
         int hostId = 0;
         int ram = 2048; //host memory (MB)

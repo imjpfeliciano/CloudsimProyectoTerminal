@@ -24,7 +24,7 @@ public class CloudletCreator {
 
         Random rand = new Random();
         //parámetros de las tareas
-        long length = 10000;
+        long length = 1000;
         long fileSize = 300;
         long outputSize = 300;
         int pesNuimber = 1;
