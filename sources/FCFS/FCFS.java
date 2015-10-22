@@ -8,19 +8,14 @@
  */
 package FCFS;
 
-import java.text.DecimalFormat;
 import java.util.*;
 
 import common.CloudletUtilities;
 import org.cloudbus.cloudsim.*;
 import org.cloudbus.cloudsim.core.CloudSim;
-import org.cloudbus.cloudsim.provisioners.BwProvisionerSimple;
-import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
-import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 import common.VirtualMachineCreator;
 import common.CloudletCreator;
 import common.DataCenterCreator;
-import common.CloudletUtilities;
 /**
  * FCFS Task scheduling
  * @author Linda J

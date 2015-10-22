@@ -24,7 +24,7 @@ public class VirtualMachineCreator {
         long size = 10000;  //MB
         int ram = 512;
         int mips = 250;
-        long bw = 1000;
+        long bw = 10000;
         int pesNumber = 1;   //Num de procesadores
         String vmm = "Xen";
 

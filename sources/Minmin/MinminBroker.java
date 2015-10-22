@@ -23,23 +23,7 @@ public class MinminBroker extends DatacenterBroker {
 
         System.out.println("\n\tMinmin Broker Schedules\n");
 
-        //Bubble sort mientras comparamos normalmente los cloudlets
-
-        /*
-        for(int i=0; i < numTareas; i++){
-            for(int j = i+1; j < numTareas; j++){
-                if(cloudletList.get(i).getCloudletLength() < cloudletList.get(j).getCloudletLength()){
-                    Cloudlet tmp = cloudletList.get(i);
-                    cloudletList.set(i, cloudletList.get(j));
-                    cloudletList.set(j, tmp);
-
-                }
-            }
-        }
-        */
         CloudletList.sort(cloudletList);
-        //setCloudletList(cloudletList);
-
 
         //Asignamos las tareas a cada máquina virtual de manera que se atiendan primero las de menor tamaño
         for(int i=0;i<numTareas;i++){
