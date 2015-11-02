@@ -17,8 +17,8 @@
         <processorPath useClasspath="true" />
       </profile>
       <profile default="false" name="Annotation profile for CloudsimProyectoTerminal" enabled="true">
-        <sourceOutputDir name="classes\generated-sources\annotations" />
-        <sourceTestOutputDir name="classes\generated-test-sources\test-annotations" />
+        <sourceOutputDir name="classes/generated-sources/annotations" />
+        <sourceTestOutputDir name="classes/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="CloudsimProyectoTerminal" />
