@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a41139-cab8-42dc-a074-f248c0e650c4" name="Default" comment="Se crea la clase Simulation, que ejecuta la simulación de todos los algoritmos y genera sus respectivos reportes en .csv para Tiempo de ejecucion y costo de procesamiento">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/Simulation/Simulation.java" />
-      <change type="DELETED" beforePath="C:\Users\Jake The Dog\IdeaProjects\CloudsimProyectoTerminal\sources\DVFS\DVFS.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake The Dog\IdeaProjects\CloudsimProyectoTerminal\sources\DVFS\DVFSBroker.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/CloudReporter/BarChartCloudlet.java" afterPath="$PROJECT_DIR$/sources/CloudReporter/BarChartCloudlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/CloudReporter/CloudletReport.java" afterPath="$PROJECT_DIR$/sources/CloudReporter/CloudletReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/common/CloudletUtilities.java" afterPath="$PROJECT_DIR$/sources/common/CloudletUtilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/common/DataCenterCreator.java" afterPath="$PROJECT_DIR$/sources/common/DataCenterCreator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/FCFS/FCFS.java" afterPath="$PROJECT_DIR$/sources/FCFS/FCFS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/Maxmin/Maxmin.java" afterPath="$PROJECT_DIR$/sources/Maxmin/Maxmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/Minmin/Minmin.java" afterPath="$PROJECT_DIR$/sources/Minmin/Minmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/Minmin/MinminBroker.java" afterPath="$PROJECT_DIR$/sources/Minmin/MinminBroker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/RoundRobin/RoundRobin.java" afterPath="$PROJECT_DIR$/sources/RoundRobin/RoundRobin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/common/VirtualMachineCreator.java" afterPath="$PROJECT_DIR$/sources/common/VirtualMachineCreator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CloudsimProyectoTerminal.iws" />
@@ -107,8 +94,8 @@
       <file leaf-file-name="CloudletReport.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sources/CloudReporter/CloudletReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2556391">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.38345864">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -712,6 +699,13 @@
       <option name="number" value="Default" />
       <updated>1441919287180</updated>
     </task>
+    <task id="LOCAL-00001" summary="Se crea la clase Simulation, que ejecuta la simulación de todos los algoritmos y genera sus respectivos reportes en .csv para Tiempo de ejecucion y costo de procesamiento">
+      <created>1446612913061</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1446612913061</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1218,8 +1212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/CloudReporter/CloudletReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2556391">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.38345864">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
