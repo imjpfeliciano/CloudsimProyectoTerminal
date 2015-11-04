@@ -41,7 +41,7 @@ public class VirtualMachineCreator {
             list.add(vm[i]);
         }
 
-        Log.printLine("Maquinas virtuales creadas... Success");
+        // Log.printLine("Maquinas virtuales creadas... Success");
         return list;
     }
 }

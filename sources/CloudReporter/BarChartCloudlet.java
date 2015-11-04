@@ -90,16 +90,14 @@ public class BarChartCloudlet extends Application {
         series5.getData().add(new XYChart.Data(maxmin, 180.54));
         */
         Scene scene  = new Scene(bc,800,600);
-        bc.getData().addAll(series[0], series[1], series[2],series[3],series[4]);
+        bc.getData().addAll(series[0], series[1], series[2]);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
     public static void main(String[] args) {
-        Application.launch(args);
-        for(int i = 0; i < args.length; i++) {
-            System.out.println(args[i]);
-        }
-        //launch(args);
+
+
+        launch(args);
     }
 
 

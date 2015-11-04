@@ -16,7 +16,7 @@ public class RoundRobin {
     private static List<Cloudlet> cloudletList;
     private static List<Vm> vmlist;
 
-    public static void main(String[] args){
+    public static List<Cloudlet> main(String[] args) {
 
         Log.printLine("Iniciando Round Robin...");
         try{
@@ -44,11 +44,12 @@ public class RoundRobin {
 
             CloudletUtilities.printCloudletList(newList);
             Log.printLine("Round Robin Finished");
-
+            return newList;
         } catch (Exception e) {
             e.printStackTrace();
             Log.printLine("The Simulation has been terminated due to an unexpected error");
         }
+        return null;
     }
 
     private static RoundRobinBroker createBroker(){

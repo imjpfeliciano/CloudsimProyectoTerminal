@@ -26,7 +26,7 @@ public class Maxmin {
     // Lista de máquinas virtuales
     private static List<Vm> vmlist;
 
-    public static void main(String[] args) {
+    public static List<Cloudlet> main(String[] args) {
 
         Log.printLine("Iniciando Maxmin...");
 
@@ -71,11 +71,13 @@ public class Maxmin {
             CloudletUtilities.printCloudletList(newList);
 
             Log.printLine("Maxmin finished!");
+            return newList;
         }
         catch (Exception e) {
             e.printStackTrace();
             Log.printLine("The simulation has been terminated due to an unexpected error");
         }
+        return null;
     }
 
 

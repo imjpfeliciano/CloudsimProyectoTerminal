@@ -31,6 +31,42 @@ public class CloudletReport {
 
     }
 
+    public double getCostAverange(List<Cloudlet> list) {
+        double totalProcessingCost = 0.0;
+        for (int i = 0; i < list.size(); i++) {
+            totalProcessingCost += list.get(i).getProcessingCost();
+        }
+        return totalProcessingCost / list.size();
+    }
+
+    public double getTimeAverange(List<Cloudlet> list) {
+        double totalTime = 0.0;
+        for (int i = 0; i < list.size(); i++) {
+            totalTime += list.get(i).getActualCPUTime();
+        }
+        return totalTime / list.size();
+    }
+
+    public double[] getCostPerCloudlet(List<Cloudlet> list) {
+        int n = list.size();
+
+        double[] result = new double[n];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i).getProcessingCost();
+        }
+        return result;
+    }
+
+    public double[] getTimePerCloudlet(List<Cloudlet> list) {
+        int n = list.size();
+
+        double[] result = new double[n];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i).getActualCPUTime();
+        }
+        return result;
+    }
+
 
 
 }

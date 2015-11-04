@@ -29,11 +29,7 @@ public class FCFS {
 	private static List<Vm> vmlist;
 
 
-
-
-
-
-	public static void main(String[] args) {
+        public static List<Cloudlet> main(String[] args) {
 
 		Log.printLine("Iniciando FCFS...");
 
@@ -91,12 +87,14 @@ public class FCFS {
 
                 CloudletUtilities.printCloudletList(newList);
 
-                Log.printLine("FCFS finished!");
+                return newList;
+                //Log.printLine("FCFS finished!");
         }
         catch (Exception e) {
             e.printStackTrace();
             Log.printLine("The simulation has been terminated due to an unexpected error");
         }
+                return null;
     }
 
 

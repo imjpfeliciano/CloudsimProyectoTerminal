@@ -17,6 +17,7 @@ import common.VirtualMachineCreator;
 import common.CloudletCreator;
 import common.DataCenterCreator;
 
+import java.util.List;
 
 public class Minmin {
 
@@ -26,7 +27,7 @@ public class Minmin {
     // Lista de máquinas virtuales
     private static List<Vm> vmlist;
 
-    public static void main(String[] args) {
+    public static List<Cloudlet> main(String[] args) {
 
         Log.printLine("Iniciando Minmin...");
 
@@ -67,15 +68,18 @@ public class Minmin {
             List<Cloudlet> newList = broker.getCloudletReceivedList();
 
             CloudSim.stopSimulation();
+            CloudletUtilities.reportCostTime(newList);
 
-            CloudletUtilities.printCloudletList(newList);
+            //CloudletUtilities.printCloudletList(newList);
 
-            Log.printLine("Minmin finished!");
+            //Log.printLine("Minmin finished!");
+            return newList;
         }
         catch (Exception e) {
             e.printStackTrace();
-            Log.printLine("The simulation has been terminated due to an unexpected error");
+            // Log.printLine("The simulation has been terminated due to an unexpected error");
         }
+        return null;
     }
 
 
