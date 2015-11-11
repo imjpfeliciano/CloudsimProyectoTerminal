@@ -21,19 +21,19 @@ public class CloudletCreator {
     }
     public static List<Cloudlet> createTasks(int userId, int cloudlets, int idShift){
         LinkedList<Cloudlet> list = new LinkedList<Cloudlet>();
-
+        cloudlets = 500;
         Random rand = new Random();
         //parámetros de las tareas
-        long length = 1000;
-        long fileSize = 300;
-        long outputSize = 300;
+        long length = 10000;
+        long fileSize = 8000;
+        long outputSize = 10000;
         int pesNuimber = 1;
         UtilizationModel utilizationModel = new UtilizationModelFull();
 
         Cloudlet[] cloudlet = new Cloudlet[cloudlets];
 
         for(int i=0; i<cloudlets; i++){
-            cloudlet[i] = new Cloudlet(idShift + i, length * getRandomInteger(10, 1), pesNuimber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i] = new Cloudlet(idShift + i, length * getRandomInteger(100, 1), pesNuimber, fileSize * (getRandomInteger(10, 1)), outputSize * (getRandomInteger(100, 1)), utilizationModel, utilizationModel, utilizationModel);
             cloudlet[i].setUserId(userId);
             list.add(cloudlet[i]);
         }

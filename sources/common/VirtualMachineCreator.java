@@ -21,10 +21,10 @@ public class VirtualMachineCreator {
         LinkedList<Vm> list = new LinkedList<Vm>();
 
         //parámetros de las máquinas virtuales
-        long size = 10000;  //MB
+        long size = 100000;  //MB
         int ram = 512;
         int mips = 250;
-        long bw = 10000;
+        long bw = 100000;
         int pesNumber = 1;   //Num de procesadores
         String vmm = "Xen";
 

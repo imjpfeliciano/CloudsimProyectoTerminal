@@ -25,14 +25,14 @@ public class DataCenterCreator {
         List<Host> hostList = new ArrayList<Host>();
         // 2. Una máquina contiene uno o más PEs o CPUs/Cores.
         List<Pe> peList = new ArrayList<Pe>();
-        int mips = 1000;
+        int mips = 10000;
         // 3. Crear los PEs y agregarlos a la lista.
         peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
         //4. Create Host with its id and list of PEs and add them to the list of machines
         int hostId = 0;
-        int ram = 2048; //host memory (MB)
+        int ram = 2048 * 2; //host memory (MB)
         long storage = 1000000; //host storage
-        int bw = 10000;
+        int bw = 1000000;
 
         //Agregamos N máquinas a nuestro data center
         for(hostId = 0; hostId < numHosts; hostId++){
@@ -58,10 +58,10 @@ public class DataCenterCreator {
         String os = "Linux";          // operating system
         String vmm = "Xen";
         double time_zone = 10.0;         // time zone this resource located
-        double cost = 3.0;              // the cost of using processing in this resource
+        double cost = 2.0;              // the cost of using processing in this resource
         double costPerMem = 0.05;        // the cost of using memory in this resource
         double costPerStorage = 0.1;    // the cost of using storage in this resource
-        double costPerBw = 0.1;            // the cost of using bw in this resource
+        double costPerBw = 0.2;            // the cost of using bw in this resource
         LinkedList<Storage> storageList = new LinkedList<Storage>();    //we are not adding SAN devices by now
 
         DatacenterCharacteristics characteristics = new DatacenterCharacteristics(

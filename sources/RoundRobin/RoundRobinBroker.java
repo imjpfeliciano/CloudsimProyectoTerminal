@@ -34,18 +34,17 @@ public class RoundRobinBroker extends DatacenterBroker{
         while( index < numTareas ){
             long capacidad = vmList.get(i).getBw();
             long costo_actual = 0;
-
-
-            while(costo_actual  + cloudletList.get(index).getCloudletLength() <= capacidad && index < numTareas){
+            long currentCost = (costo_actual + cloudletList.get(index).getCloudletLength()) / 100;
+            while (currentCost <= capacidad && index < numTareas) {
                 costo_actual += cloudletList.get(index).getCloudletLength();
                 bindCloudletToVm(index, i);
                 System.out.println("Task" + cloudletList.get(index).getCloudletId() + " is bound with VM" + vmList.get(i).getId() + " tam: " + cloudletList.get(index).getCloudletLength());
                 index++;
-
                 if(index >= numTareas) {
                     //Si terminamos de asignar todas las tareas
                     break;
                 }
+
             }
 
             i++;
