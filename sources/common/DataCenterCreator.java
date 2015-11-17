@@ -19,18 +19,18 @@ public class DataCenterCreator {
 
 
     public static Datacenter createDatacenter(String name){
-        int numHosts = 30;
+        int numHosts = 50;
         //Pasos para crear un datacenter
         // 1. Necesitamos crear una lista para almacenar nuestra máquina
         List<Host> hostList = new ArrayList<Host>();
         // 2. Una máquina contiene uno o más PEs o CPUs/Cores.
         List<Pe> peList = new ArrayList<Pe>();
-        int mips = 10000;
+        int mips = 111000;
         // 3. Crear los PEs y agregarlos a la lista.
         peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
         //4. Create Host with its id and list of PEs and add them to the list of machines
         int hostId = 0;
-        int ram = 2048 * 2; //host memory (MB)
+        int ram = 20480 * 2; //host memory (MB)
         long storage = 1000000; //host storage
         int bw = 1000000;
 
@@ -58,7 +58,7 @@ public class DataCenterCreator {
         String os = "Linux";          // operating system
         String vmm = "Xen";
         double time_zone = 10.0;         // time zone this resource located
-        double cost = 2.0;              // the cost of using processing in this resource
+        double cost = 0.001;              // the cost of using processing in this resource
         double costPerMem = 0.05;        // the cost of using memory in this resource
         double costPerStorage = 0.1;    // the cost of using storage in this resource
         double costPerBw = 0.2;            // the cost of using bw in this resource

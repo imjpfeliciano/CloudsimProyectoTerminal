@@ -18,7 +18,7 @@ import common.CloudletCreator;
 import common.DataCenterCreator;
 /**
  * FCFS Task scheduling
- * @author Linda J
+ * @author
  */
 public class FCFS {
 
@@ -47,6 +47,7 @@ public class FCFS {
                 //Datacenters are the resource providers in CloudSim. We need at list one of them to run a CloudSim simulation
                 @SuppressWarnings("unused")
                 Datacenter datacenter0 =  new DataCenterCreator().createDatacenter("Datacenter_0");
+
 
                 //Third step: Create Broker
                 //DatacenterBroker broker = createBroker();
