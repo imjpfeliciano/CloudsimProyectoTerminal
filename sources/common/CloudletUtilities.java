@@ -1,5 +1,6 @@
 package common;
 
+import PSO.Particle;
 import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.Log;
 
@@ -9,6 +10,8 @@ import java.io.Writer;
 import java.io.*;
 
 import CloudReporter.CloudletReport;
+import org.cloudbus.cloudsim.Vm;
+
 /**
  * Created by jpfeliciano on 18/09/15.
  */
@@ -69,6 +72,13 @@ public class CloudletUtilities {
 
     }
 
+    public double getProcessingCostBefore(Vm vm, Cloudlet task) {
+        double processing = task.getProcessingCost() * vm.getMips();
+        double time = vm.getSize() * task.getCostPerSec();
+        return (processing / 1100000000) + (time / 10000);
+
+    }
+
     public static void reportSimulationPerCloudlet(List<List<Cloudlet>> datos) {
         int size = datos.size();
         CloudletReport cloudletReport = new CloudletReport();
@@ -78,7 +88,7 @@ public class CloudletUtilities {
         try {
             writer = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream("executionTime.csv"), "utf-8"));
-            writer.write("MinMin,Maxmin,FCFS,RR");
+            writer.write("MinMin,Maxmin,FCFS,RR,Heuristics");
             writer.write("\n");
             for (int i = 0; i < datos.get(0).size(); i++) {
                 for (int j = 0; j < size; j++) {

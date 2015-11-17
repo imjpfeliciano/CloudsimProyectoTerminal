@@ -1,9 +1,11 @@
 package FCFS;
 
+import PSO.Particle;
 import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.Host;
+import PSO.FitnessFunction;
 
 /**
  * A Broker that schedules Tasks to the VMs 
@@ -23,6 +25,16 @@ public class FcfsBroker extends DatacenterBroker {
 		int reqTasks=cloudletList.size();
 		int reqVms=vmList.size();
 		double  foo = cloudletList.get(0).getCostPerSec(vmList.get(0).getId());
+
+		FitnessFunction pso = new FitnessFunction();
+
+		//pso.evaluate((Particle)cloudletList.get(2),vmList);
+
+
+
+
+
+
 		System.out.print("Valor de foooo ---->"+foo);
 		for(int i=0 ; i < reqTasks ; i++){
 
