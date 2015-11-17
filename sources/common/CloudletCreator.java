@@ -43,7 +43,8 @@ public class CloudletCreator {
             long fileSize_i = fileSize * (getRandomInteger(209715, 100));
             long outputSize_i = outputSize * (getRandomInteger(209715, 100));
 
-            cloudlet[i] = new Particle(idShift + i, lenght_i, pesNuimber, fileSize_i, outputSize_i, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i] = new Particle(idShift + i, lenght_i, pesNuimber, fileSize_i, outputSize_i, utilizationModel,
+                    utilizationModel, utilizationModel);
             cloudlet[i].setUserId(userId);
             cloudlet[i].setResourceParameter(userId, costPerSec * lenght_i, costPerBw * outputSize_i);
             list.add(cloudlet[i]);
@@ -73,7 +74,8 @@ public class CloudletCreator {
             long fileSize_i = fileSize * (getRandomInteger(209715, 100));
             long outputSize_i = outputSize * (getRandomInteger(209715, 100));
 
-            cloudlet[i] = new Cloudlet(idShift + i, lenght_i, pesNuimber, fileSize_i, outputSize_i, utilizationModel, utilizationModel, utilizationModel);
+            cloudlet[i] = new Cloudlet(idShift + i, lenght_i, pesNuimber, fileSize_i, outputSize_i, utilizationModel,
+                    utilizationModel, utilizationModel);
             cloudlet[i].setUserId(userId);
             cloudlet[i].setResourceParameter(userId, costPerSec * lenght_i, costPerBw * outputSize_i);
             list.add(cloudlet[i]);

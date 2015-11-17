@@ -35,9 +35,10 @@ public class VirtualMachineCreator {
         for (int i = 0; i < vms; i++) {
             //Modificar new CloudletSchedulerTimeShared por FCFS
             if (i % 2 == 0) {
-                vm[i] = new Vm(idShift + i, user_id, mips * (getRandomInteger(10, 2)), pesNumber * 2, ram * 2, bw * 2, size * 2, vmm, new CloudletSchedulerSpaceShared());
+                vm[i] = new Vm(idShift + i, user_id, mips * (getRandomInteger(10, 2)), pesNumber * 2, ram * 2, bw * 2,
+                        size * 2, vmm, new CloudletSchedulerTimeShared());
             } else {
-                vm[i] = new Vm(idShift + i, user_id, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerSpaceShared());
+                vm[i] = new Vm(idShift + i, user_id, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
             }
             list.add(vm[i]);
         }
